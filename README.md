@@ -29,3 +29,16 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+Настройка Ngrx
+1)
+начал с установки ngrx store 
+для этого использовал 
+npm install @ngrx/core @ngrx/store --save
+2)
+добавляем класс reducers
+3)добавил класс reducers.ts там обозначил интерфейс и редюсер
+добавил в module мой стор
+добавил app.component.ts обработчики click и подписал на reducers
+добавил класс clock и в него через инпут ввожу данные

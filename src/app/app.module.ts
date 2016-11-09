@@ -5,14 +5,23 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { clockReducer } from './reducers';
+import { Store, StoreModule } from '@ngrx/store';
+import { ClockComponent } from './components/clock/clock.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ClockComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+     StoreModule.provideStore(
+        {clock: clockReducer}, 
+        {clock: new Date() }
+      )
   ],
   providers: [],
   bootstrap: [AppComponent]
