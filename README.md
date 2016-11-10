@@ -60,3 +60,5 @@ declarations: [
       StoreModule.provideStore(
        {}, 
         { } )
+
+5) добавить loginpage
