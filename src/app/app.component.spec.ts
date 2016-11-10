@@ -2,12 +2,28 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ClockComponent } from './components/clock/clock.component';
+import {Store, StoreModule} from '@ngrx/store'; 
+import { clockReducer } from './reducers';
 
 describe('App: Client2', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        ClockComponent
+      ],
+       imports: [
+      StoreModule.provideStore(
+       {}, 
+        { } )
+
+
+        //StoreModule.provideStore(
+        //  {clock: clockReducer}, 
+        //   {clock: new Date() } )
+     
+       
       ],
     });
   });

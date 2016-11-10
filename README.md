@@ -42,3 +42,21 @@ npm install @ngrx/core @ngrx/store --save
 добавил в module мой стор
 добавил app.component.ts обработчики click и подписал на reducers
 добавил класс clock и в него через инпут ввожу данные
+4) необходимо добавить тесты 
+
+была ошибка при вызове тестов когда есть input(), решилась тем что я добавил в тесты 
+
+import {Store, StoreModule} from '@ngrx/store'; 
+import { clockReducer } from './reducers';
+
+
+и добавил в деларейшенс 
+
+declarations: [
+        ..., //тут предыдущие элементы вместо точек
+        ClockComponent
+      ],
+       imports: [
+      StoreModule.provideStore(
+       {}, 
+        { } )
