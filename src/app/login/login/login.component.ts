@@ -29,10 +29,10 @@ constructor(fb: FormBuilder, private LoggedService: LoggedService, private route
 
   submitForm(value: any){
     console.log(value);
-     this.login(); 
-
-    
+     this.login();  
   }
+
+  
 
     login() {if (this.LoggedService.login(this.complexForm.value.firstName, this.complexForm.value.lastName))
     {this.router.navigate(['dashboard'])}};

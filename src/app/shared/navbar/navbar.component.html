@@ -1,6 +1,8 @@
 <p>
   navbar works!
 </p>
+{{currentroute}}
+{{router.url}}
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -15,12 +17,12 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#defaultpage">defaultpage</a></li>
-        <li><a href="#NonsecuredComponent">NonsecuredComponent</a></li>
-         <li><a href="#SecuredComponent">securedComponent</a></li>
+        <li><a routerLinkActive="active" href="#defaultpage">defaultpage</a></li>
+        <li class="active"><a routerLinkActive="disabled"  href="#NonsecuredComponent">NonsecuredComponent</a></li>
+         <li [routerLinkActive]="['active-link']"> <a href="#SecuredComponent">securedComponent</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -56,3 +58,73 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+
+<h2>Radio (single choice)</h2>
+  
+  <div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary"  href="#NonsecuredComponent">
+      <input name="options" id="option1" type="radio"  href="#NonsecuredComponent"> Option 1
+    </label>
+    <label class="btn btn-primary">
+      <input name="options" id="option2" type="radio"> Option 2
+    </label>
+    <label class="btn btn-primary active">
+      <input name="options" id="option3" type="radio"> Option 3
+    </label>
+  </div>
+
+
+<div class="container">
+  <h2>Dynamic Pills</h2>
+  <ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
+    <li><a  href="#NonsecuredComponent" data-toggle="pill">Menu 1</a></li>
+    <li><a data-toggle="pill" href="#menu2">Menu 2</a></li>
+    <li><a data-toggle="pill" href="#menu3">Menu 3</a></li>
+  </ul>
+
+
+WORKING
+  <div class="btn-group" role="group" aria-label="...">
+  <a href="#NonsecuredComponent" class="btn btn-default">NonsecuredComponent</a>
+  <a href="#SecuredComponent" class="btn btn-default">SecuredComponent</a>
+  <a href="#defaultpage" class="btn btn-default">#defaultpage</a>
+</div>
+WORKING
+
+
+<div class="btn-group" data-toggle="buttons">
+   <a onclick="location.href='#NonsecuredComponent';" class="btn btn-primary">
+    <input type="radio" name="options" id="option1"> Параметр 1
+  </a>
+  <label class="btn btn-primary">
+    <input type="radio" name="options" id="option2"> Параметр 2
+  </label>
+  <label class="btn btn-primary">
+    <input type="radio" name="options" id="option3"> Параметр 3
+  </label>
+</div>
+
+
+<!--
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+</div>
+-->
